@@ -6,7 +6,7 @@
 /*   By: jnovoa-a <jnovoa-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:17:15 by jnovoa-a          #+#    #+#             */
-/*   Updated: 2025/05/02 19:14:48 by jnovoa-a         ###   ########.fr       */
+/*   Updated: 2025/05/05 19:22:41 by jnovoa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,10 @@ int	ft_putnbr(int n)
 	count += ft_putchar((nb%10)+'0');
 	return (count);
 }
+
+/*
+int main(void)
+{
+    ft_putnbr(-12345);
+    return 0;
+} */

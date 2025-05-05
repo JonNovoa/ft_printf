@@ -6,7 +6,7 @@
 /*   By: jnovoa-a <jnovoa-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:17:19 by jnovoa-a          #+#    #+#             */
-/*   Updated: 2025/04/29 19:34:20 by jnovoa-a         ###   ########.fr       */
+/*   Updated: 2025/05/05 19:23:10 by jnovoa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,9 @@ int	ft_putstr(char *s)
 	}
 	return (len);
 }
+/* 
+int main(void)
+{
+    ft_putstr("Hello, World!");
+    return 0;
+} */

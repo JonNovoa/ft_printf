@@ -6,7 +6,7 @@
 /*   By: jnovoa-a <jnovoa-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:17:12 by jnovoa-a          #+#    #+#             */
-/*   Updated: 2025/05/02 19:21:37 by jnovoa-a         ###   ########.fr       */
+/*   Updated: 2025/05/05 19:22:18 by jnovoa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,16 @@ int	ft_puthex(unsigned long n, char format)
 	count += ft_putchar(base[n % 16]);
 	return (count);
 }
+
+/*
+ int main(void)
+{
+    unsigned long n = 3059;
+    ft_puthex(n, 'x');  // Imprime 131 en minúsculas
+    write(1, "\n", 1);
+    
+    ft_puthex(n, 'X');  // Imprime 131 en mayúsculas
+    write(1, "\n", 1);
+
+    return 0;
+} */
