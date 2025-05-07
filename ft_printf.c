@@ -6,7 +6,7 @@
 /*   By: jnovoa-a <jnovoa-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:16:52 by jnovoa-a          #+#    #+#             */
-/*   Updated: 2025/05/07 14:26:06 by jnovoa-a         ###   ########.fr       */
+/*   Updated: 2025/05/07 19:35:07 by jnovoa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_check_format(va_list args, const char format)
 	else if (format == 'd' || format == 'i')
 		return (ft_putnbr(va_arg(args, int)));
 	else if (format == 'u')
-		return (ft_put_unsigned(va_arg(args, unsigned int)));
+		return (ft_unsigned(va_arg(args, unsigned int)));
 	else if (format == 'x' || format == 'X')
 		return (ft_puthex(va_arg(args, unsigned int), format));
 	else if (format == 'p')
@@ -30,7 +30,7 @@ static int	ft_check_format(va_list args, const char format)
 		return (2 + ft_puthex(va_arg(args, unsigned long), 'x'));
 	}
 	else if (format == '%')
-		return (ft_handle_percent());
+		return (ft_percent());
 	return (0);
 }
 
@@ -62,7 +62,7 @@ int	ft_printf(const char *format, ...)
 	return (len);
 }
 
-/* #include <stdio.h>
+/*#include <stdio.h>
 int main(void)
 {
 	int n = 42;
@@ -153,4 +153,4 @@ int main(void)
 	printf("\033[0;32mprintf devolvió: %d\n\033[0m", rlen2);
 	printf("\n\n");
 	return 0;
-} */
+}*/

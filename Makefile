@@ -6,7 +6,7 @@
 #    By: jnovoa-a <jnovoa-a@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/29 19:17:28 by jnovoa-a          #+#    #+#              #
-#    Updated: 2025/05/02 19:34:00 by jnovoa-a         ###   ########.fr        #
+#    Updated: 2025/05/07 19:32:39 by jnovoa-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,9 @@ SRCS = ft_printf.c \
 	   ft_putchar.c \
 	   ft_putstr.c \
 	   ft_putnbr.c \
-	   ft_put_unsigned.c \
+	   ft_unsigned.c \
 	   ft_puthex.c \
-	   ft_handle_percent.c
+	   ft_percent.c
 
 OBJS = $(SRCS:.c=.o)
 
