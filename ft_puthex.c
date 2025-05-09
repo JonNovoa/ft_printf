@@ -6,26 +6,39 @@
 /*   By: jnovoa-a <jnovoa-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:17:12 by jnovoa-a          #+#    #+#             */
-/*   Updated: 2025/05/09 15:23:57 by jnovoa-a         ###   ########.fr       */
+/*   Updated: 2025/05/09 16:09:36 by jnovoa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+#include "ft_printf.h"
+
+#include "ft_printf.h"
+
+
 int	ft_puthex(unsigned long n, char format)
 {
-	int		count;
+	int	count;
 	char	*base;
 
 	count = 0;
 	if (format == 'p')
 	{
+		/* puntero NULL debe imprimirse como "(nil)" */
+		if (n == 0)
+			return (ft_putstr("(nil)"));
+		/* prefijo 0x para punteros no NULL */
 		count += ft_putstr("0x");
 		base = "0123456789abcdef";
-		if (n == 0)
-			return (count + ft_putchar('0'));
+		/* recursión usando 'x' para no reimprimir el prefijo */
+		if (n >= 16)
+			count += ft_puthex(n / 16, 'x');
+		count += ft_putchar(base[n % 16]);
+		return (count);
 	}
-	else if (format == 'x')
+	/* formatos %x y %X */
+	if (format == 'x')
 		base = "0123456789abcdef";
 	else
 		base = "0123456789ABCDEF";
@@ -34,6 +47,8 @@ int	ft_puthex(unsigned long n, char format)
 	count += ft_putchar(base[n % 16]);
 	return (count);
 }
+
+
 
 /*
  int main(void)
