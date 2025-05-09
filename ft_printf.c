@@ -6,7 +6,7 @@
 /*   By: jnovoa-a <jnovoa-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:16:52 by jnovoa-a          #+#    #+#             */
-/*   Updated: 2025/05/09 15:24:21 by jnovoa-a         ###   ########.fr       */
+/*   Updated: 2025/05/09 18:52:16 by jnovoa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (len);
 }
-
 
 /*#include <stdio.h>
 int main(void)
