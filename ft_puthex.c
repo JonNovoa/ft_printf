@@ -6,7 +6,7 @@
 /*   By: jnovoa-a <jnovoa-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:17:12 by jnovoa-a          #+#    #+#             */
-/*   Updated: 2025/05/05 19:22:18 by jnovoa-a         ###   ########.fr       */
+/*   Updated: 2025/05/09 15:23:57 by jnovoa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,19 @@ int	ft_puthex(unsigned long n, char format)
 	char	*base;
 
 	count = 0;
-	if (format == 'x' || format == 'p')
+	if (format == 'p')
 	{
+		count += ft_putstr("0x");
 		base = "0123456789abcdef";
+		if (n == 0)
+			return (count + ft_putchar('0'));
 	}
+	else if (format == 'x')
+		base = "0123456789abcdef";
 	else
-	{
 		base = "0123456789ABCDEF";
-	}
 	if (n >= 16)
-	{
 		count += ft_puthex(n / 16, format);
-	}
 	count += ft_putchar(base[n % 16]);
 	return (count);
 }

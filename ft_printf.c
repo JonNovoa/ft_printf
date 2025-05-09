@@ -6,7 +6,7 @@
 /*   By: jnovoa-a <jnovoa-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 19:16:52 by jnovoa-a          #+#    #+#             */
-/*   Updated: 2025/05/07 19:35:07 by jnovoa-a         ###   ########.fr       */
+/*   Updated: 2025/05/09 15:24:21 by jnovoa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ static int	ft_check_format(va_list args, const char format)
 	else if (format == 'x' || format == 'X')
 		return (ft_puthex(va_arg(args, unsigned int), format));
 	else if (format == 'p')
-	{
-		write(1, "0x", 2);
-		return (2 + ft_puthex(va_arg(args, unsigned long), 'x'));
-	}
+		return (ft_puthex((unsigned long)va_arg(args, void *), 'p'));
 	else if (format == '%')
 		return (ft_percent());
 	return (0);
@@ -61,6 +58,7 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (len);
 }
+
 
 /*#include <stdio.h>
 int main(void)
@@ -137,13 +135,16 @@ int main(void)
 	printf("\n\n");
 	// Test 11: Locura
 	rlen1 = ft_printf(
-	"\033[0;33mTest locura: %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i"
-	"%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%\n\033[0m",
+	"\033[0;33mTest locura: %%%c%%%s%%%d%%%i%%%u\
+	%%%x%%%X%%%%%%%c%%%s%%%d%%%i"
+	"%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u\
+	%%%x%%%X%%%% %c%%\n\033[0m",
 	'A', "42", 42, 42, 42, 42, 42,
 	'B', "-42", -42, -42, -42, -42, 42,
 	'C', "0", 0, 0, 0, 0, 42, 0);
 	rlen2 = printf("\033[0;32mtest locura: \
-    %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% \
+    %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s\
+	%%%d%%%i%%%u%%%x%%%X%%%% \
     %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%\n\033[0m",
 	'A', "42", 42, 42, 42, 42, 42,
 	'B', "-42", -42, -42, -42, -42, 42,
